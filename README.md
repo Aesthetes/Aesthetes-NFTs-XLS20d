@@ -1,5 +1,5 @@
-# Aesthetes-NFTs-XLS20
-### This is how we mint NFTs on XRPL XLS20 Testnet
+# Aesthetes-NFTs-XLS20d
+### This is how we mint NFTs on XRPL XLS20d Testnet
 
 For this new type of asset, we wanted to give users complete freedom of choice for the hosting platform of their digital content.  
 For this purpose, we will leverage the URI field contained inside each NFToken for content referencing, as it allows up to 256 bytes of data to be stored in it.  
