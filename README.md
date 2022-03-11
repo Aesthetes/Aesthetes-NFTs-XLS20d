@@ -1,5 +1,5 @@
 # Aesthetes-NFTs-XLS20d
-### This is how we mint NFTs on XRPL XLS20d Testnet
+## This is how we mint NFTs on XRPL XLS20d Testnet
 
 For this new type of asset, we wanted to give users complete freedom of choice for the hosting platform of their digital content.  
 For this purpose, we will leverage the URI field contained inside each NFToken for content referencing, as it allows up to 256 bytes of data to be stored in it.  
@@ -52,6 +52,8 @@ https://gateway.pinata.cloud/ipfs/QmQpLBHB6YSRYozVMbfLgB9YgPZaush5bYbESgoPcWqdXc
 https://ipfs.io/ipfs/QmQpLBHB6YSRYozVMbfLgB9YgPZaush5bYbESgoPcWqdXc
 ```
 These links will be tried in order for the retrieval of a json formatted text file that will be taken as the metadata file.  
+
+## Immutability checks
 The link from which the file is successfully retrieved is very important, since if this is not included inside the list of *immutable sources* then the data is considered non-immutable (so also the NFT).  
 The list of immutable sources is a list of regular expressions, which can be found, again, [here](https://xrpl.aesthetes.art/.well-known/xrp-ledger.toml), under the name "IMMUTABLE_SOURCES".  
 If you don't want to use one of the immutable sources to host your file while still wanting to guarantee a verifiable proof of immutability, you can leverage the special URI field "0x64_SHA256".  
@@ -59,6 +61,7 @@ This field is used, aside for URI resolution, for comparing the value contained 
 In particular, all the fields starting with the "0x" are treated as hex formatted and taken as they are and not converted to text. They must come under a key formatted as "0xlength_name", with "length" being the (decimal) number of hexadecimal digits included in the URI field and "name" being the identificator of the field.  
 This is done in order to save space in space-constrained situations like, for example, the URI field of an NFToken, where normal utf8-encoded text has to be converted into hexadecimal format when it's written on the blockchain, thus doubling the number of digits needed.
 
+## Metadata structure
 The structure currently used for the metadata file is not the final one, as we will consider the integration of major XRPL standards for this type of file when they will be official.  
 For now, this file is composed of the following fields:
 * **name**: the title of the content referenced by this file.
